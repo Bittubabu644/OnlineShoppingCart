@@ -1,0 +1,31 @@
+@app.route("/cart")
+def cart():
+    return render_template("cart.html")
+
+
+@app.route("/checkout")
+def checkout():
+    return render_template(
+        "checkout.html",
+        cart=cart_items,
+        total=calculate_total()
+    )
+
+
+@app.route("/place-order", methods=["POST"])
+def place_order():
+
+    name = request.form["name"]
+    phone = request.form["phone"]
+    address = request.form["address"]
+    city = request.form["city"]
+    state = request.form["state"]
+    pincode = request.form["pincode"]
+    payment = request.form["payment"]
+
+    return f"""
+    <h1>Order Placed Successfully!</h1>
+    <p>Thank you, {name}.</p>
+    <p>Payment Method: {payment}</p>
+    <p>Delivery Address: {address}, {city}, {state} - {pincode}</p>
+    """

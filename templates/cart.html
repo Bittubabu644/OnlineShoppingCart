@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Cart - OnlineShopping</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f1f3f6;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            background: #2874f0;
+            color: white;
+            padding: 12px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* CART */
+
+        .cart-container {
+            max-width: 1100px;
+            margin: 25px auto;
+            display: flex;
+            gap: 20px;
+        }
+
+        .cart-items {
+            flex: 1;
+            background: white;
+            padding: 25px;
+        }
+
+        .cart-items h2 {
+            margin-bottom: 25px;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 25px;
+            padding: 20px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-item img {
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+        }
+
+        .item-info {
+            flex: 1;
+        }
+
+        .item-info h3 {
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .quantity button {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #aaa;
+            background: white;
+            cursor: pointer;
+        }
+
+        .remove {
+            margin-top: 15px;
+            border: none;
+            background: none;
+            color: #2874f0;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* SUMMARY */
+
+        .summary {
+            width: 330px;
+            height: fit-content;
+            background: white;
+            padding: 25px;
+        }
+
+        .summary h2 {
+            color: #777;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        .total {
+            font-size: 20px;
+            font-weight: bold;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+
+        .checkout {
+            width: 100%;
+            padding: 15px;
+            background: #fb641b;
+            color: white;
+            border: none;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        @media(max-width: 800px) {
+
+            .cart-container {
+                flex-direction: column;
+            }
+
+            .summary {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <div class="navbar">
+
+        <div class="logo">
+            OnlineShopping
+        </div>
+
+        <a href="/">
+            🏠 Home
+        </a>
+
+    </div>
+
+
+    <!-- CART -->
+
+    <div class="cart-container">
+
+
+        <!-- PRODUCTS -->
+
+        <div class="cart-items">
+
+            <h2>
+                My Cart
+            </h2>
+
+
+            <!-- PRODUCT 1 -->
+
+            <div class="cart-item">
+
+                <img
+                    src="https://via.placeholder.com/140"
+                    alt="Laptop">
+
+                <div class="item-info">
+
+                    <h3>
+                        Premium Laptop
+                    </h3>
+
+                    <p>
+                        Intel Core i5 | 16GB RAM | 512GB SSD
+                    </p>
+
+                    <div class="price">
+                        ₹50,000
+                    </div>
+
+
+                    <div class="quantity">
+
+                        <button>
+                            −
+                        </button>
+
+                        <span>
+                            1
+                        </span>
+
+                        <button>
+                            +
+                        </button>
+
+                    </div>
+
+
+                    <button class="remove">
+                        REMOVE
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="cart-item">
+
+                <img
+                    src="https://via.placeholder.com/140"
+                    alt="Headphones">
+
+                <div class="item-info">
+
+                    <h3>
+                        Wireless Headphones
+                    </h3>
+
+                    <p>
+                        Bluetooth | Noise Cancellation
+                    </p>
+
+                    <div class="price">
+                        ₹2,500
+                    </div>
+
+
+                    <div class="quantity">
+
+                        <button>
+                            −
+                        </button>
+
+                        <span>
+                            1
+                        </span>
+
+                        <button>
+                            +
+                        </button>
+
+                    </div>
+
+
+                    <button class="remove">
+                        REMOVE
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRICE SUMMARY -->
+
+        <div class="summary">
+
+            <h2>
+                PRICE DETAILS
+            </h2>
+
+
+            <div class="row">
+
+                <span>
+                    Price
+                </span>
+
+                <span>
+                    ₹52,500
+                </span>
+
+            </div>
+
+
+            <div class="row">
+
+                <span>
+                    Discount
+                </span>
+
+                <span>
+                    − ₹5,000
+                </span>
+
+            </div>
+
+
+            <div class="row">
+
+                <span>
+                    Delivery
+                </span>
+
+                <span>
+                    FREE
+                </span>
+
+            </div>
+
+
+            <div class="row total">
+
+                <span>
+                    Total Amount
+                </span>
+
+                <span>
+                    ₹47,500
+                </span>
+
+            </div>
+
+
+            <button class="checkout">
+
+                PLACE ORDER
+
+            </button>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
